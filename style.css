@@ -180,9 +180,9 @@ body {
 }
 
 /* Media query para pantallas de hasta 800px de ancho */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     .card {
-        width: 350px; 
+        width: 300px; 
         height: 450px; 
     }
 
