@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", system-ui;
+}
+
+body {
+    background-color: #0071bc;
+}
+
+.card {
+    width: 640px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+}
+
+.card:hover{
+    transform: rotate(-5deg);
+}
+
+.card:hover .outside{
+    transform: rotateY(-130deg);
+}
+
+.outside,
+.inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+}
+
+.inside{
+    background: linear-gradient(
+        to right,
+        #e0e0e0, #ffffff 30%);
+        line-height: 3;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        left: 50%;
+}
+
+.outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+}
+
+.front {
+    background-color: #ffffff;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e0e0e0, #ffffff 30%);
+}
+
+.cake {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.top-layer,
+.middle-layer,
+.bottom-layer {
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(transparent 50px,
+            #91bdda 50px,
+            #91bdda 60px,
+            transparent 60px),
+        radial-gradient(circle at 30px 5px, #91bdda 30px, #0071bc 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+}
+
+.middle-layer {
+    transform: scale(0.85);
+    top: 6px;
+}
+
+.top-layer{
+    transform: scale(0.7);
+    top: 26px;
+}
+
+.candle{
+    height: 45px;
+    width: 15px;
+    background: repeating-linear-gradient(
+        45deg,
+        #000000 0,
+        #000000 5px,
+        #808080 5px,
+        #808080 10px
+    );
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 202px;
+}
+
+.candle:before{
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffa500;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform: rotate(45deg);
+    left: -1px;
+}
+
+.outside p{
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-top: 23px;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.gift-container {
+    position: relative;
+    display: inline-block; /* Para alinear los elementos horizontalmente */
+}
+
+.arrow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+}
+
+.message {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.party-balloons {
+    position: relative;
+    bottom: -25px; /* Ajustar la posición vertical de los globos */
+}
+
+/* Media query para pantallas de hasta 800px de ancho */
+@media only screen and (max-width: 800px) {
+    .card {
+        width: 350px; 
+        height: 450px; 
+    }
+
+    .outside,
+    .inside {
+        width: 100%; 
+        left: 0; 
+        right: 0; 
+    }
+
+    .inside {
+        padding: 20px; 
+    }
+
+    .cake {
+        bottom: 15px; 
+    }
+
+    .party-balloons {
+        bottom: -25px; 
+    }
+}
