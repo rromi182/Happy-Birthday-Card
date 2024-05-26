@@ -182,13 +182,13 @@ body {
 /* Media query para pantallas de hasta 800px de ancho */
 @media only screen and (max-width: 800px) {
     .card {
-        width: 300px; 
+        width: 350px; 
         height: 450px; 
     }
 
     .outside,
     .inside {
-        width: 90%; 
+        width: 100%; 
         left: 0; 
         right: 0; 
     }
