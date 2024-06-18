@@ -6,7 +6,20 @@
 }
 
 body {
-    background-color: #0071bc;
+    /* background-color: #0071bc; */
+    background-image: url(minecraft-background.jpeg);
+    background-blend-mode: darken;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Ajusta la opacidad según sea necesario */
+    pointer-events: none; /* Permite que los eventos de ratón pasen a través de esta capa */
 }
 
 .card {
@@ -154,6 +167,7 @@ body {
 .gift-container {
     position: relative;
     display: inline-block; /* Para alinear los elementos horizontalmente */
+    margin-bottom: 2px;
 }
 
 .arrow {
@@ -176,7 +190,7 @@ body {
 
 .party-balloons {
     position: relative;
-    bottom: -25px; /* Ajustar la posición vertical de los globos */
+    bottom: -32px; /* Ajustar la posición vertical de los globos */
 }
 
 /* Media query para pantallas de hasta 800px de ancho */
@@ -201,7 +215,11 @@ body {
         bottom: 15px; 
     }
 
+    .minecraft-cake{
+        margin-left: 35px;
+    }
+
     .party-balloons {
-        bottom: -25px; 
+        bottom: -32px;
     }
 }
